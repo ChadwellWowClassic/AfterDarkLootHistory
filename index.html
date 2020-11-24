@@ -36,7 +36,7 @@ $(document).ready(function(){
         searchText: "",
     },
     mounted: function(){
-        fetch("loot.csv")
+        fetch("loot.csv?ver=" + Math.floor(Math.random() * Number.MAX_SAFE_INTEGER))
           .then(response => response.text())
           .then((data) => {
             csv = $.csv.toArrays(data).reverse()
